@@ -70,15 +70,8 @@
   }
 
   body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background-image:
-      linear-gradient(var(--grid) 1px, transparent 1px),
-      linear-gradient(90deg, var(--grid) 1px, transparent 1px);
-    background-size: 40px 40px;
-    pointer-events: none;
-    z-index: 0;
+    /* grid removed per design revision */
+    content: none;
   }
 
   /* ── Theme switch ── */
@@ -163,7 +156,7 @@
     transition: color 0.4s;
   }
 
-  nav .logo span { color: var(--warm); }
+  /* warm-surname rule removed: wordmark is single colour */
 
   nav ul {
     list-style: none;
@@ -227,7 +220,7 @@
 
   .hero h1 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(3rem, 7vw, 5.5rem);
+    font-size: clamp(2.4rem, 5.5vw, 4rem);
     font-weight: 700;
     line-height: 1.08;
     color: var(--slate);
@@ -313,7 +306,7 @@
     position: absolute;
     font-family: 'Cormorant Garamond', serif;
     font-weight: 400;
-    font-style: italic;
+    
     opacity: 0;
     animation: floatIn 1s ease forwards, drift 8s ease-in-out infinite alternate;
     transition: color 0.4s;
@@ -1339,7 +1332,7 @@
     <span class="math-sym ms-6 warm">&#8728;</span>
   </div>
   <div class="hero-label">Cambridge (UK) &amp; Online</div>
-  <h1>Clarity, rigour,<br>creativity</h1>
+  <h1>Clarity, rigour, creativity</h1>
   <p class="hero-desc">
     Mathematician and computer scientist. I teach, I build software, and I brew beer &mdash; all grounded in first principles.
   </p>
@@ -1966,7 +1959,7 @@
         email: email,
         regarding: regarding,
         message: message,
-        _subject: 'SCHOLAR: ' + regarding + ' — ' + name
+        _subject: 'SCHOLAR: ' + regarding + ', ' + name
       })
     })
     .then(r => r.json())
